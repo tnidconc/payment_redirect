@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting to Payment</title>
+    <!-- This line attempts to redirect immediately -->
+    <meta http-equiv="refresh" content="0; url=upi://pay?pa=tnidconclave@oksbi&pn=TNIDC%20conclave&am=5.00&cu=INR&tn=Event%20Registration%20Fee">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 1.5em;
+            color: #1a73e8;
+        }
+        .link, .back-button {
+            display: inline-block;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .link {
+             background-color: #4285F4;
+             color: white;
+        }
+        .link:hover {
+            background-color: #357ae8;
+        }
+        .back-button {
+            background-color: #6c757d;
+            color: white;
+            margin-top: 15px;
+        }
+        .back-button:hover {
+            background-color: #5a6268;
+        }
+        .instructions {
+            margin-top: 30px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            text-align: left;
+            font-size: 0.9em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Redirecting to your UPI app...</h1>
+        <p>Your payment app should open automatically.</p>
+        <p>If it doesn't, please click the "Pay Now" button below.</p>
+
+        <!-- Fallback link -->
+        <a href="upi://pay?pa=tnidconclave@oksbi&pn=TNIDC%20conclave&am=5.00&cu=INR&tn=Event%20Registration%20Fee" class="link">Pay Now</a>
+
+        <div class="instructions">
+            <p><strong>After paying:</strong></p>
+            <ol>
+                <li>Note down the 12-digit UPI Transaction ID.</li>
+                <li>Come back to this browser.</li>
+                <li>Click the button below to return to the form and enter the ID.</li>
+            </ol>
+        </div>
+
+        <!-- Button to go back to the previous page (the form) -->
+        <button onclick="history.back()" class="back-button">Go Back to Form</button>
+    </div>
+
+    <script>
+        // This script is another way to ensure the redirect happens
+        window.location.href = "upi://pay?pa=tnidconclave@oksbi&pn=TNIDC%20conclave&am=5.00&cu=INR&tn=Event%20Registration%20Fee";
+    </script>
+</body>
+</html>
